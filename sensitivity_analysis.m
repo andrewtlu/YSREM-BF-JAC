@@ -25,7 +25,7 @@ end
 
 r0_intricatoria
 
-candid2 = subs(paramarr, subsarr);
+candid2 = subs(r0intricatoria, paramarr, subsarr);
 
 r0intricatoriasens = sym(zeros(2, length(paramarr)));
 
