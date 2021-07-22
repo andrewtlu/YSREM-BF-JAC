@@ -10,9 +10,9 @@ dfe_subs
 % Increment desired variable in for loop
 phival = 75;
 omegaeval = 400000;
-omegapval = 200;
-stepsize = 200;
-steps = 39;
+omegapval = 280;
+stepsize = 80;  
+steps = 60;
 markercount = 10;
 maxtime = 730;
 ylim1 = 12000;
@@ -182,6 +182,7 @@ for i = 1:steps
     
     fplot(intricatoriathreshold, [0 omegapmax],...
         'LineStyle', '-.',...
+        'LineWidth', 2,...
         'DisplayName', 'ℛ_{0}^I = 1')
     patch('XData', [0 omegapmax omegapmax],...
         'YData', [0 0 double(subs(intricatoriathreshold, omegap, omegapmax))],...
@@ -193,15 +194,15 @@ for i = 1:steps
     plot(omegapval, phival, 'r.',...
         'MarkerFaceColor', 'red',...
         'MarkerSize', 10,...
-        'DisplayName', '\omega_P, \Phi')
+        'DisplayName', '(\omega_P, \Phi)')
     text(400, 120, strcat('(\omega_P: ', sprintf('%.0f', omegapval), ', \Phi: ', sprintf('%.0f', phival), ')'),...
         'Color', 'black', 'FontSize', 16)
     text(400, 135, strcat('ℛ_{0}^I: ', sprintf('%.3f', double(subs(r0intricatoria, [phi omegap], [phival, omegapval])))),...
         'Color', 'black', 'FontSize', 16)
     legend('FontSize', 12)
     
-    xlabel('\omega_P', 'fontsize', 14)
-    ylabel('\Phi', 'fontsize', 14)
+    xlabel('\omega_P (Other Pupae)', 'fontsize', 14)
+    ylabel('\Phi (Host Plants)', 'fontsize', 14)
     
     % Increment desired variable here:
     omegapval = omegapval + stepsize;
