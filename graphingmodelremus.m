@@ -11,8 +11,8 @@ dfe_subs
 phival = 75;
 omegaeval = 22500;
 omegapval = 2000;
-stepsize = 22500;
-steps = 39;
+stepsize = 8800;
+steps = 60;
 markercount = 10;
 maxtime = 730;
 ylim1 = 12000;
@@ -178,6 +178,7 @@ for i = 1:steps
     
     fplot(remusthreshold, [0 omegaemax],...
         'LineStyle', '-.',...
+        'LineWidth', 2,...
         'DisplayName', 'ℛ_{0}^R = 1')
     patch('XData', [0 omegaemax omegaemax],...
         'YData', [0 0 double(subs(remusthreshold, omegae, omegaemax))],...
@@ -189,15 +190,15 @@ for i = 1:steps
     plot(omegaeval, phival, 'r.',...
         'MarkerFaceColor', 'red',...
         'MarkerSize', 10,...
-        'DisplayName', '\omega_E, \Phi')
+        'DisplayName', '(\omega_E, \Phi)')
     text(50000, 120, strcat('(\omega_E: ', sprintf('%.0f', omegaeval), ', \Phi: ', sprintf('%.0f', phival), ')'),...
         'Color', 'black', 'FontSize', 16)
     text(50000, 135, strcat('ℛ_{0}^R: ', sprintf('%.3f', double(subs(r0remus, [phi omegae], [phival, omegaeval])))),...
         'Color', 'black', 'FontSize', 16)
     legend('FontSize', 12);
     
-    xlabel('\omega_E', 'fontsize', 14)
-    ylabel('\Phi', 'fontsize', 14)
+    xlabel('\omega_E (Other Eggs)', 'fontsize', 14)
+    ylabel('\Phi (Host Plants)', 'fontsize', 14)
     
     % Increment desired variable here:
     omegaeval = omegaeval + stepsize;
