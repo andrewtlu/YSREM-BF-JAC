@@ -226,7 +226,6 @@ for i = 1:length(figlist)
     else
         fn = num2str(i/3);
         saveas(fighandle, fullfile(dir, [strcat('r-thresh-', fn) '.png']))
-
     end
 end
 %}

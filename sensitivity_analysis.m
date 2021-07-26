@@ -2,7 +2,7 @@
 
 loadvals
 
-phival = 100;
+phival = 1000;
 omegaeval = 100;
 omegapval = 100;
 
